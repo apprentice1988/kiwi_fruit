@@ -1,8 +1,9 @@
-source 'http://ruby.taobao.org'
+#source 'http://ruby.taobao.org'
+source 'https://rubygems.org'
+
 ruby '2.1.1'
 
 gem 'rails', '4.1.0.rc1'
-gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.1'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -12,6 +13,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'foundation-rails'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'qiniu'
+gem 'viddl-rb'
+gem 'pg'
+gem 'rails-i18n'
+
 group :development do
   gem "better_errors"
   gem 'rack-mini-profiler'
@@ -22,6 +27,8 @@ group :test do
   gem 'factory_girl_rails'
   gem "rspec-rails"
 end
+
+gem 'rails_12factor',group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
