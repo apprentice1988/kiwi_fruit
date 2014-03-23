@@ -1,18 +1,6 @@
 class Video < ActiveRecord::Base
-  validates_presence_of :url, :src, :tag_id, :title
-  before_create :set_src
-  def set_src
-    if url =~ /youtube/
-      id = url.match(/v=\S*/).to_s.slice(2..-1)
-      src = "//www.youtube.com/embed/#{id}"
-    elsif url =~ /vimeo/
-      id = url.match(/\d*\z/).to_s
-      src = "//player.vimeo.com/video/#{id}"
-    elsif url =~ /youku/
-      id = url.match(/id_\w*/).to_s.slice(3..-1)
-      src = "http://player.youku.com/embed/#{id}"
-    else
-      self.errors.add(:url,"url invalid")
-    end
-  end
+  has_one :caption
+  belongs_to :industrie, :counter_cache => true
+  belongs_to :video_extension
+  delegate :ori_url,:provider,:dl_url,:description,:keywords,:embed_url,:is_available,:duration,:title,:ori_thumbnail_small,:ori_thumbnail_medium, :ori_thumbnail_large, :to=>:video_extensions, :allow_nil=>true
 end

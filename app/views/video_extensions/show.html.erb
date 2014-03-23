@@ -1,0 +1,13 @@
+<iframe src="<%= @video_extension.embed_url %>" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><b>title:</b> <%= @video_extension.title %></p>
+<p><b>ori_url:</b> <%= @video_extension.ori_url %></p>
+<p><b>provider:</b> <%= @video_extension.provider %></p>
+<p><b>duration:</b> <%= @video_extension.duration %></p>
+<p><b>dl_urls:</b> <%= @video_extension.dl_urls.join("$$$$") %></p>
+<p><b>embed_url:</b> <%= @video_extension.embed_url %></p>
+<p><b>is available:</b> <%= @video_extension.is_available %></p>
+<p><b>date:</b> <%= @video_extension.date %></p>
+<p><b>keyword:</b> <%= @video_extension.keywords %></p>
+<p><b>small thumbnail:</b><%= @video_extension.ori_thumbnail_small %></p>
+<p><b>medium thumbnail:</b><%= @video_extension.ori_thumbnail_medium %></p>
+<p><b>large thumbnail:</b><%= @video_extension.ori_thumbnail_large %></p>

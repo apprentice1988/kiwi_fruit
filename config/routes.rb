@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  root 'videos#index'
+  root 'video_extensions#index'
   resources :videos
+  resources :video_extensions
+
+  namespace :admin do
+    resource :videos
+    resource :video_extensions
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
