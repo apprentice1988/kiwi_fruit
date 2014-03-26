@@ -1,5 +1,6 @@
 <% @video_extensions.each do |video_extension| %>
   <iframe src="<%= video_extension.embed_url %>" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
   <%= link_to video_extension.title, video_extension_path(video_extension) if video_extension.title %>
+  <%= link_to new_video_extension_video_path(video_extension) %>
 <% end %>
 <%= link_to "new video", new_video_extension_path, :class=>'button tiny' %>

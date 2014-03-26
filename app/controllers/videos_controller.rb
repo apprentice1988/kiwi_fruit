@@ -14,7 +14,9 @@ class VideosController < ApplicationController
 
   # GET /videos/new
   def new
-    @video = Video.new
+    @video_extension = VideoExtension.find(params[:video_extension_id])
+    enc_dl_url = Base64.urlsafe_base64(@video_extension.dl_urls.first)
+    post ""
   end
 
   # GET /videos/1/edit

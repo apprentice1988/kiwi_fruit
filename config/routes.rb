@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'video_extensions#index'
-  resources :videos
-  resources :video_extensions
+  resources :video_extensions, :shallow=>true do
+    resources :videos
+  end
 
   namespace :admin do
     resource :videos
