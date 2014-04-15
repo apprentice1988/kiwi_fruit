@@ -1,10 +1,11 @@
-#source 'http://ruby.taobao.org'
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
+#source 'https://rubygems.org'
 
 ruby '2.1.1'
 
 gem 'rails', '4.1.0.rc1'
 gem 'sass-rails', '~> 4.0.1'
+gem "font-awesome-rails"
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
@@ -18,6 +19,7 @@ gem 'video_info',git: 'git@github.com:apprentice1988/video_info.git'
 gem 'pg'
 gem 'rails-i18n'
 gem 'simple_form'
+gem 'rails_admin'
 
 group :development do
   gem "better_errors"

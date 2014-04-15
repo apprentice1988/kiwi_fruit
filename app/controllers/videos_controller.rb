@@ -15,8 +15,21 @@ class VideosController < ApplicationController
   # GET /videos/new
   def new
     @video_extension = VideoExtension.find(params[:video_extension_id])
-    enc_dl_url = Base64.urlsafe_base64(@video_extension.dl_urls.first)
-    post ""
+    enc_dl_url = Qiniu::Utils.urlsafe_base64_encode(@video_extension.ori_thumbnail_small)
+    encode_entry_uri = Qiniu::Utils.encode_entry_uri('thebeast',"#{Time.now}.mp4")
+    path = "/fetch/#{enc_dl_url}/to/#{encode_entry_uri}"
+    host = "http://iovip.qbox.me"
+    uri = URI.parse "#{host}#{path}"
+    http = Net::HTTP.new(uri.host, uri.port)
+    #http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    signing_str = path+"\n"
+    encoded_sign = HMAC::SHA1.digest(signing_str,Qiniu::Config.settings[:secret_key])
+    request = Net::HTTP::Post.new(uri.path)
+    request.add_field('Content-Type', 'application/x-www-form-urlencoded')
+    request.add_field('Host','iovip.qbox.me')
+    request.add_field("Athorization","QBox #{Qiniu::Config.settings[:access_key]}:#{encoded_sign}")
+    response = http.request(request)
   end
 
   # GET /videos/1/edit

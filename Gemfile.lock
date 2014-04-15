@@ -8,7 +8,7 @@ GIT
       multi_json
 
 GEM
-  remote: https://rubygems.org/
+  remote: http://ruby.taobao.org/
   specs:
     actionmailer (4.1.0.rc1)
       actionpack (= 4.1.0.rc1)
@@ -62,9 +62,13 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
+    font-awesome-rails (4.0.3.1)
+      railties (>= 3.2, < 5.0)
     foundation-rails (5.2.0.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
+    haml (4.0.5)
+      tilt
     hike (1.2.3)
     htmlentities (4.3.1)
     i18n (0.6.9)
@@ -74,7 +78,12 @@ GEM
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (4.2.0)
+      railties (>= 3.2.16)
     json (1.8.1)
+    kaminari (0.15.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -82,6 +91,7 @@ GEM
     mini_portile (0.5.2)
     minitest (5.3.1)
     multi_json (1.9.0)
+    nested_form (0.3.2)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     pg (0.17.1)
@@ -93,6 +103,9 @@ GEM
       rest-client (~> 1.6)
       ruby-hmac (~> 0.4)
     rack (1.5.2)
+    rack-pjax (0.7.0)
+      nokogiri (~> 1.5)
+      rack (~> 1.3)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.0.rc1)
@@ -111,6 +124,20 @@ GEM
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
+    rails_admin (0.6.1)
+      builder (~> 3.1)
+      coffee-rails (~> 4.0)
+      font-awesome-rails (>= 3.0)
+      haml (~> 4.0)
+      jquery-rails (~> 3.0)
+      jquery-ui-rails (~> 4.0)
+      kaminari (~> 0.14)
+      nested_form (~> 0.3)
+      rack-pjax (~> 0.7)
+      rails (~> 4.0)
+      remotipart (~> 1.0)
+      safe_yaml (~> 1.0)
+      sass-rails (~> 4.0)
     rails_serve_static_assets (0.0.2)
     rails_stdout_logging (0.0.3)
     railties (4.1.0.rc1)
@@ -121,6 +148,7 @@ GEM
     rake (10.1.1)
     rdoc (4.1.1)
       json (~> 1.4)
+    remotipart (1.2.1)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rspec-core (2.14.8)
@@ -136,6 +164,7 @@ GEM
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
     ruby-hmac (0.4.0)
+    safe_yaml (1.0.1)
     sass (3.2.16)
     sass-rails (4.0.2)
       railties (>= 4.0.0, < 5.0)
@@ -186,6 +215,7 @@ DEPENDENCIES
   binding_of_caller
   coffee-rails (~> 4.0.0)
   factory_girl_rails
+  font-awesome-rails
   foundation-rails
   jbuilder (~> 2.0)
   jquery-rails
@@ -194,6 +224,7 @@ DEPENDENCIES
   rails (= 4.1.0.rc1)
   rails-i18n
   rails_12factor
+  rails_admin
   rspec-rails
   sass-rails (~> 4.0.1)
   sdoc (~> 0.4.0)

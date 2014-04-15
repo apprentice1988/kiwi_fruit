@@ -1,0 +1,9 @@
+<div>
+  <%= link_to image_tag(video_extension.ori_thumbnail_medium,:width=>"320px",:height=>"251px"),video_extension %>
+</div>
+<div>
+  <%= link_to video_extension.title, video_extension_path(video_extension) if video_extension.title %>
+</div>
+<div>
+  <%= link_to "fetch to qiniu", new_video_extension_video_path(video_extension) %>
+</div>

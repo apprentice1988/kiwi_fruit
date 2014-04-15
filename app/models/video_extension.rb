@@ -2,6 +2,7 @@ class VideoExtension < ActiveRecord::Base
   has_one :video
   validates :ori_url, :url=>true, :allow_blank => true
   after_create :get_info
+
   def get_info
     video_info = VideoInfo.new(ori_url)
     self.update(
@@ -18,5 +19,9 @@ class VideoExtension < ActiveRecord::Base
       embed_url: video_info.embed_url,
       dl_urls: ViddlRb.get_urls(ori_url)
     )
+  end
+
+  def update_dl_urls
+    update_attributes(:dl_urls=>ViddlRb.get_urls(ori_url))
   end
 end

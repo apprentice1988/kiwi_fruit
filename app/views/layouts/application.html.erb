@@ -12,6 +12,9 @@
   </head>
 
   <body>
+    <div class='nav-color-bar'><%= image_tag 'nav_top_color_bar.png' %></div>
+    <div class='nav-top'><%= render 'layouts/nav_top' %></div>
+    <div class='nav-main'><%= render 'layouts/nav_main' %></div>
     <div class="container">
       <%= yield %>
     </div>

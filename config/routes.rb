@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   root 'video_extensions#index'
   resources :video_extensions, :shallow=>true do
     resources :videos
