@@ -3,7 +3,7 @@ source 'http://ruby.taobao.org'
 
 ruby '2.1.1'
 
-gem 'rails', '4.1.0.rc1'
+gem 'rails', '4.1.1'
 gem 'sass-rails', '~> 4.0.1'
 gem "font-awesome-rails"
 gem 'uglifier', '>= 1.3.0'
@@ -18,19 +18,23 @@ gem 'viddl-rb'
 gem 'video_info',git: 'git@github.com:apprentice1988/video_info.git'
 gem 'pg'
 gem 'rails-i18n'
+gem 'devise'
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'simple_form'
-gem 'rails_admin'
 
 group :development do
   gem "better_errors"
   #gem 'rack-mini-profiler'
-  gem 'binding_of_caller'
   gem 'spring'
 end
 
-group :test do
-  gem 'factory_girl_rails'
-  gem "rspec-rails"
+group :development, :test do
+  gem 'pry-rails'
+  gem 'awesome_print'
+  gem 'quiet_assets'
+  gem 'minitest-rails'
+  gem 'fabrication'
+  gem 'byebug'
 end
 
 gem 'rails_12factor',group: :production

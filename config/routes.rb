@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   root 'video_extensions#index'
   resources :video_extensions, :shallow=>true do
     resources :videos
-  end
-
-  namespace :admin do
-    resource :videos
-    resource :video_extensions
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
